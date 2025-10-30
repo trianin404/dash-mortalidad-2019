@@ -10,7 +10,6 @@ fig = px.bar(data, x="Departamento", y="Muertes", title="Mortalidad por departam
 
 # Crear la aplicación Dash
 app = Dash(__name__)
-server = app.server  # 👈 importante para Render
 
 # Diseño de la app
 app.layout = html.Div([
@@ -18,5 +17,6 @@ app.layout = html.Div([
     dcc.Graph(figure=fig)
 ])
 
+# Ejecutar el servidor local
 if __name__ == "__main__":
-    app.run_server(host="0.0.0.0", port=8050, debug=True)
+    app.run(debug=True)
